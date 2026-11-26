@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="AeroRoute.Tests/AeroRoute.Tests.csproj" />
+  <Project Path="AeroRoute/AeroRoute.csproj" />
+</Solution>
