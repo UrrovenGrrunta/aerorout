@@ -1,5 +1,4 @@
 using System;
-using System.Runtime.InteropServices;
 
 namespace AeroRoute;
 
@@ -15,7 +14,7 @@ public class Processors
     }
     public string? ReadGroundSpeed()
     {
-        Console.Write("Eneter grpund speed (kt): ");
+        Console.Write("Enter ground speed (kt): ");
         string? groundSpeed = Console.ReadLine();
         return groundSpeed;
     }

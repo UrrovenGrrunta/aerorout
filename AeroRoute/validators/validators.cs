@@ -1,11 +1,10 @@
 using System;
-using System.Xml;
 
 namespace AeroRoute;
 
 public class Validators
 {
-    //This method is responsible for converting the ICAO code into the correct format
+    // Validates and normalizes an ICAO code.
     public static string ValidateIcao(string? icao)
     {
         if (string.IsNullOrEmpty(icao))
@@ -18,12 +17,12 @@ public class Validators
         {
             if (symbol < 'A' || symbol > 'Z')
             {
-                throw new ArgumentException($"ICAO code must be letters from A to Z. {symbol} is not a valid letter.");
+                throw new ArgumentException($"ICAO code must contain only letters A-Z. '{symbol}' is invalid.");
             }
         }
         if (icao.Length != 4)
         {
-            throw new ArgumentException("ICAO code must be 4 characters long");
+            throw new ArgumentException("ICAO code must be exactly 4 characters long");
         }
 
         return icao;
@@ -42,11 +41,11 @@ public class Validators
         }
         catch (FormatException ex)
         {
-            throw new ArgumentException($"Cannot convert {speed} to double.\nError: {ex}");
+            throw new ArgumentException($"Cannot convert '{speed}' to a number.\nError: {ex}");
         }
         if (groundSpeed <= 0f || !double.IsFinite(groundSpeed))
         {
-            throw new ArgumentException("Ground speed must be positive finite number");
+            throw new ArgumentException("Ground speed must be a positive, finite number");
         }
         return groundSpeed;
     }

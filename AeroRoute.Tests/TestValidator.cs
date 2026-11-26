@@ -48,7 +48,7 @@ public class ValidatorTests
     [InlineData(null)]
     [InlineData("NaN")]
     [InlineData("Infinity")]
-    public void ValidateSpeed_RejectsIncorrectrValues(string? input)
+    public void ValidateSpeed_RejectsIncorrectValues(string? input)
     {
         Assert.Throws<ArgumentException>(() =>
             Validators.ValidateGroundSpeed(input)
