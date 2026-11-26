@@ -30,5 +30,29 @@ public class ValidatorTests
             Validators.ValidateIcao(input)
         );
     }
+    [Theory]
+    [InlineData("250", 250.0)]
+    [InlineData(" 180 ", 180.0)]
+    [InlineData ("0.5", 0.5)]
+    public void ValidateSpeed_SpeedConvertsToDouble(string? input, double expected)
+    {
+        double result = Validators.ValidateGroundSpeed(input);
+        Assert.Equal(expected, result);
+    }
+
+    [Theory]
+    [InlineData("0")]
+    [InlineData("-50")]
+    [InlineData("abc")]
+    [InlineData("")]
+    [InlineData(null)]
+    [InlineData("NaN")]
+    [InlineData("Infinity")]
+    public void ValidateSpeed_RejectsIncorrectrValues(string? input)
+    {
+        Assert.Throws<ArgumentException>(() =>
+            Validators.ValidateGroundSpeed(input)
+        );
+    }
 
 }
