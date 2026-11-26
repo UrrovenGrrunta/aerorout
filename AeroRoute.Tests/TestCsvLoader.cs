@@ -42,5 +42,30 @@ namespace AeroRoute.Tests
             Assert.Equal(57.2019, parsedAirport.Latitude);
             Assert.Equal(-2.19778, parsedAirport.Longitude);
         }
+        [Fact]
+        public void TestCsvLoader_LoadAirports()
+        {
+            string path = Path.Combine(
+            AppContext.BaseDirectory,
+            "Data",
+            "airports_test.csv"
+            );
+            var loader = new Loaders.AirportCsvLoader();
+            Dictionary<string, Airport> airports = loader.LoadAirports(path);
+            Assert.Equal(4, airports.Count);
+        }
+        [Fact]
+        public void TestCsvLoader_ValuesCorrect()
+        {
+            string path = Path.Combine(
+                AppContext.BaseDirectory,
+                "Data",
+                "airports_test.csv"
+            );
+            var loader = new Loaders.AirportCsvLoader();
+            Dictionary<string, Airport> airports = loader.LoadAirports(path);
+            Assert.Equal("Aberdeen International Airport", airports["EGPD"].Name);
+            Assert.Equal("Edinburgh Airport", airports["EGPH"].Name);
+        }
     }
 }
