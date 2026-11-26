@@ -1,0 +1,5 @@
+id,ident,name,latitude_deg,longitude_deg,elevation_ft,iso_country,iso_region,municipality,icao_code,iata_code
+2462,EGPH,Edinburgh Airport,55.950145,-3.372288,135,GB,GB-SCT,"Ingliston, Edinburgh",EGPH,EDI
+2434,EGLL,London Heathrow Airport,51.470748,-0.459909,83,GB,GB-ENG,London,EGLL,LHR
+2461,EGPF,Glasgow Airport,55.871899,-4.43306,26,GB,GB-SCT,Glasgow,EGPF,GLA
+2459,EGPD,Aberdeen International Airport,57.2019,-2.19778,215,GB,GB-SCT,Aberdeen,EGPD,ABZ

@@ -21,5 +21,10 @@
   <ItemGroup>
     <ProjectReference Include="..\AeroRoute\AeroRoute.csproj" />
   </ItemGroup>
+ <ItemGroup>
+    <None Include="..\Data\airports_test.csv" 
+    Link="Data\airports_test.csv" 
+    CopyToOutputDirectory="PreserveNewest" />
+ </ItemGroup>
 
 </Project>
